@@ -26,26 +26,26 @@ export default function LandingPage() {
     <div className="min-h-screen bg-offwhite">
       <header className="bg-offwhite shadow-sm">
         <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-          <h1 className="text-2xl font-serif text-darkgreen">Espacio Darsha</h1>
+          <h1 className="text-2xl font-serif text-black">Espacio Darsha</h1>
           <nav>
             <ul className="flex space-x-8">
-              <li><a href="#services" className="text-darkgreen hover:text-coral uppercase text-sm">Servicios</a></li>
-              <li><a href="#shop" className="text-darkgreen hover:text-coral uppercase text-sm">Shop</a></li>
-              <li><a href="#social" className="text-darkgreen hover:text-coral uppercase text-sm">Social</a></li>
+              <li><a href="#services" className="text-black hover:text-beige uppercase text-sm">Servicios</a></li>
+              <li><a href="#shop" className="text-black hover:text-beige uppercase text-sm">Shop</a></li>
+              <li><a href="#social" className="text-black hover:text-beige uppercase text-sm">Social</a></li>
             </ul>
           </nav>
         </div>
       </header>
 
-      <main className="bg-peach">
+      <main className="bg-grayishbeige">
         <section className="container mx-auto px-4 py-16 flex items-center">
           <div className="w-1/2 pr-8">
             <h2 className="text-6xl font-serif mb-4 leading-tight">Espacio Darsha</h2>
-            <p className="text-xl mb-8 text-darkgreen">Se tu mejor version de ti</p>
-            <Button size="lg" className="bg-coral hover:opacity-90 text-offwhite">Reserva tu turno</Button>
+            <p className="text-xl mb-8 text-black">Se tu mejor version de ti</p>
+            <Button size="lg" className="bg-black hover:opacity-60 text-offwhite">Reserva tu turno</Button>
           </div>
           <div className="w-1/2 relative">
-            <div className="absolute inset-0 bg-coral rounded-full"></div>
+            <div className="absolute inset-0 bg-beige rounded-full"></div>
             <Image
                 src={heroImage}
                 alt="Beautiful woman"
@@ -58,7 +58,7 @@ export default function LandingPage() {
         <section id="services" className="bg-offwhite py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-5xl font-serif text-center mb-4">Services</h2>
-            <p className="text-xl text-center text-darkgreen mb-12">
+            <p className="text-xl text-center text-black mb-12">
               Relaxation of body and mind in which time does not exist.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -78,13 +78,13 @@ export default function LandingPage() {
                       className="rounded-full mx-auto"
                     />
                     {service.isNew && (
-                      <span className="absolute top-2 right-2 bg-darkgreen text-offwhite text-xs px-2 py-1 rounded-full">
+                      <span className="absolute top-2 right-2 bg-black text-offwhite text-xs px-2 py-1 rounded-full">
                         New
                       </span>
                     )}
                   </div>
                   <h3 className="text-xl font-medium mb-2">{service.name}</h3>
-                  <Link href="#" className="text-darkgreen hover:text-coral inline-flex items-center">
+                  <Link href="#" className="text-black hover:text-beige inline-flex items-center">
                     Learn more <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
                 </div>
@@ -96,14 +96,14 @@ export default function LandingPage() {
         <section id="about" className="container mx-auto px-4 py-16">
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 md:pr-8 mb-8 md:mb-0">
-              <h2 className="text-4xl font-serif mb-4 text-darkgreen">Aroma Therapy</h2>
-              <p className="text-darkgreen mb-6">
+              <h2 className="text-4xl font-serif mb-4 text-black">Aroma Therapy</h2>
+              <p className="text-black mb-6">
                 Give yourself the ultimate home spa experience with a type of therapy that uses
                 gentle pressure on specific points along your feet (and possibly on your hands or ears as
                 well) to help you feel better. The theory is that this eases stress, and that helps your body
                 work better.
               </p>
-              <Link href="#" className="text-darkgreen hover:text-coral-dark inline-flex items-center">
+              <Link href="#" className="text-black hover:text-beige-dark inline-flex items-center">
                 Learn more <ArrowRight className="ml-1 h-4 w-4" />
               </Link>
             </div>
@@ -121,7 +121,7 @@ export default function LandingPage() {
 
         <section id="reviews" className="bg-offwhite py-16">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-serif text-center mb-12 text-darkgreen">Review from our clients</h2>
+            <h2 className="text-4xl font-serif text-center mb-12 text-black">Review from our clients</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
                 {
@@ -153,7 +153,7 @@ export default function LandingPage() {
                   service: "Hydro Therapy"
                 }
               ].map((review, index) => (
-                <Card key={index} className="bg-peach">
+                <Card key={index} className="bg-beige">
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
                       <Image
@@ -164,12 +164,12 @@ export default function LandingPage() {
                         className="rounded-full mr-3"
                       />
                       <div>
-                        <h3 className="font-semibold text-darkgreen">{review.title}</h3>
-                        <p className="text-sm text-darkgreen">{review.name}</p>
+                        <h3 className="font-semibold text-black">{review.title}</h3>
+                        <p className="text-sm text-black">{review.name}</p>
                       </div>
                     </div>
-                    <p className="mb-4 text-darkgreen">{review.review}</p>
-                    <Link href="#" className="text-darkgreen hover:text-coral-dark font-semibold inline-flex items-center text-sm">
+                    <p className="mb-4 text-black">{review.review}</p>
+                    <Link href="#" className="text-black hover:text-beige-dark font-semibold inline-flex items-center text-sm">
                       {review.service} <ArrowRight className="ml-1 h-4 w-4" />
                     </Link>
                   </CardContent>
@@ -179,9 +179,9 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="contact" className="bg-peach py-16">
+        <section id="contact" className="bg-grayishbeige py-16">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-semibold text-center mb-12 text-darkgreen">Contact Us</h2>
+            <h2 className="text-3xl font-semibold text-center mb-12 text-black">Contact Us</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 { icon: Phone, text: "+1 (555) 123-4567" },
@@ -189,7 +189,7 @@ export default function LandingPage() {
                 { icon: Clock, text: "Mon-Sat: 9AM - 7PM" }
               ].map(({ icon: Icon, text }) => (
                 <div key={text} className="flex items-center justify-center">
-                  <Icon className="mr-2 text-darkgreen" />
+                  <Icon className="mr-2 text-black" />
                   <span>{text}</span>
                 </div>
               ))}
@@ -201,8 +201,8 @@ export default function LandingPage() {
       <footer className="bg-offwhite py-8">
         <div className="container mx-auto px-4 text-center">
           <div className="flex justify-center space-x-4 mb-4">
-            <a href="#" className="text-text-coral hover:text-coral-dark"><Instagram /></a>
-            <a href="#" className="text-text-coral hover:text-coral-dark"><Facebook /></a>
+            <a href="#" className="text-text-beige hover:text-beige-dark"><Instagram /></a>
+            <a href="#" className="text-text-beige hover:text-beige-dark"><Facebook /></a>
           </div>
           <p className="text-gray-600">&copy; 2024 Espacio Darsha. All rights reserved.</p>
         </div>

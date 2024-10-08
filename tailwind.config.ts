@@ -10,11 +10,12 @@ const config: Config = {
   theme: {
   	extend: {
   		colors: {
-        peach: '#f5e2d4',
+        grayishbeige: '#CEC3BA',
+        black: '#3D393A',
         darkgreen: '#1d3437',
-        coral: {
-          DEFAULT: '#f4a086',
-          dark: '#e07b63', // Add a darker shade
+        beige: {
+          DEFAULT: '#E8E3DD',
+          dark: '#D1C7C0',
         },
         offwhite: '#fafaf9',
   			background: 'hsl(var(--background))',
