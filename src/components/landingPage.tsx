@@ -1,11 +1,13 @@
 // components/LandingPage.tsx
 
 import heroImage from '@/assets/images/hero-img.jpg'
+import heroHome from '@/assets/images/women-home.jpg'
 import verticalImage from '@/assets/images/vertical-prod.jpg'
 import verticalImage2 from '@/assets/images/vertical-prod-2.jpg'
 import verticalImage3 from '@/assets/images/vertical-prod-3.jpg'
 import verticalImage4 from '@/assets/images/vertical-prod-4.jpg'
 import verticalImage5 from '@/assets/images/vertical-prod-5.jpg'
+import logoNav from '@/assets/logos/LOGOS-02.png'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import {
@@ -17,47 +19,70 @@ import {
   Search,
   ShoppingBag,
   ArrowRight,
+  MessageSquareQuote,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { Baskervville, Poppins } from 'next/font/google'
+
+const baskervville = Baskervville({ 
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-baskervville',
+})
+
+const poppins = Poppins({ 
+  weight: ['300', '400', '500', '600', '700'],
+  subsets: ['latin'],
+  variable: '--font-poppins',
+})
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-offwhite">
+    <div className={`min-h-screen bg-offwhite ${poppins.variable} ${baskervville.variable} font-sans`}>
       <header className="bg-offwhite shadow-sm">
         <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-          <h1 className="text-2xl font-serif text-black">Espacio Darsha</h1>
+        <Image src={logoNav} alt="Espacio Darsha" height={60} />
           <nav>
             <ul className="flex space-x-8">
-              <li><a href="#services" className="text-black hover:text-beige uppercase text-sm">Servicios</a></li>
-              <li><a href="#shop" className="text-black hover:text-beige uppercase text-sm">Shop</a></li>
-              <li><a href="#social" className="text-black hover:text-beige uppercase text-sm">Social</a></li>
+              <li><a href="#services" className="text-black hover:text-beige uppercase text-lg">Servicios</a></li>
+              <li><a href="#shop" className="text-black hover:text-beige uppercase text-lg">Shop</a></li>
+              <li><a href="#social" className="text-black hover:text-beige uppercase text-lg">Social</a></li>
             </ul>
           </nav>
         </div>
       </header>
 
       <main className="bg-grayishbeige">
-        <section className="container mx-auto px-4 py-16 flex items-center">
-          <div className="w-1/2 pr-8">
-            <h2 className="text-6xl font-serif mb-4 leading-tight">Espacio Darsha</h2>
-            <p className="text-xl mb-8 text-black">Se tu mejor version de ti</p>
-            <Button size="lg" className="bg-black hover:opacity-60 text-offwhite">Reserva tu turno</Button>
-          </div>
-          <div className="w-1/2 relative">
-            <div className="absolute inset-0 bg-beige rounded-full"></div>
-            <Image
-                src={heroImage}
-                alt="Beautiful woman"
-                height={500}
-                className="rounded-full relative z-10"
-            />
+        <section className="relative h-[70vh] md:h-[60vh]">
+            <div className="absolute inset-0 overflow-hidden">
+                <Image
+                    src={heroHome}
+                    alt="Beautiful woman"
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="center 30%"
+                    quality={100}
+                />
+            </div>
+
+
+           <div className="absolute inset-0 flex items-center">
+            <div className="container mx-auto px-4">
+              <div className="max-w-xl bg-grayishbeige bg-opacity-80 p-16 rounded-lg">
+                <h1 className={`text-7xl md:text-6xl ${baskervville.className} mb-4 leading-tight text-gray-900`}>
+                Espacio Darsha
+                </h1>
+                <p className="text-3xl mb-8 text-black">Se tu mejor version de ti</p>
+                <Button size="lg" className="bg-black hover:opacity-60 text-offwhite text-xl">Reserva tu turno</Button>
+              </div>
+            </div>
           </div>
         </section>
 
         <section id="services" className="bg-offwhite py-16">
           <div className="container mx-auto px-4">
-            <h2 className="text-5xl font-serif text-center mb-4">Services</h2>
+            <h2 className="text-5xl text-center mb-4">Services</h2>
             <p className="text-xl text-center text-black mb-12">
               Relaxation of body and mind in which time does not exist.
             </p>
@@ -96,7 +121,7 @@ export default function LandingPage() {
         <section id="about" className="container mx-auto px-4 py-16">
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 md:pr-8 mb-8 md:mb-0">
-              <h2 className="text-4xl font-serif mb-4 text-black">Aroma Therapy</h2>
+              <h2 className="text-4xl mb-4 text-black">Aroma Therapy</h2>
               <p className="text-black mb-6">
                 Give yourself the ultimate home spa experience with a type of therapy that uses
                 gentle pressure on specific points along your feet (and possibly on your hands or ears as
@@ -121,19 +146,17 @@ export default function LandingPage() {
 
         <section id="reviews" className="bg-offwhite py-16">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-serif text-center mb-12 text-black">Review from our clients</h2>
+            <h2 className="text-4xl text-center mb-12 text-black">Review from our clients</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
                 {
                   name: "John Doe",
-                  image: "/placeholder.svg?height=80&width=80",
                   title: "Amazing place!",
                   review: "The service was impeccable and the staff was the best we've met. Thank you from the bottom.",
                   service: "Sauna Rooms"
                 },
                 {
                   name: "Jane Smith",
-                  image: "/placeholder.svg?height=80&width=80",
                   title: "BEST massage",
                   review: "The BEST massage I have ever had, every time I call Reka Spa to my private venue for body work!",
                   service: "Massages"
@@ -147,7 +170,6 @@ export default function LandingPage() {
                 },
                 {
                   name: "Emily Brown",
-                  image: "/placeholder.svg?height=80&width=80",
                   title: "Relaxing experience",
                   review: "The hydro therapy session was incredibly relaxing. I left feeling refreshed and rejuvenated.",
                   service: "Hydro Therapy"
@@ -156,14 +178,8 @@ export default function LandingPage() {
                 <Card key={index} className="bg-beige">
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
-                      <Image
-                        src={review.image}
-                        alt={review.name}
-                        width={40}
-                        height={40}
-                        className="rounded-full mr-3"
-                      />
-                      <div>
+                      <MessageSquareQuote className="text-black" />
+                      <div className="pl-3">
                         <h3 className="font-semibold text-black">{review.title}</h3>
                         <p className="text-sm text-black">{review.name}</p>
                       </div>
@@ -198,13 +214,13 @@ export default function LandingPage() {
         </section>
       </main>
 
-      <footer className="bg-offwhite py-8">
+      <footer className="bg-black py-8">
         <div className="container mx-auto px-4 text-center">
           <div className="flex justify-center space-x-4 mb-4">
-            <a href="#" className="text-text-beige hover:text-beige-dark"><Instagram /></a>
-            <a href="#" className="text-text-beige hover:text-beige-dark"><Facebook /></a>
+            <a href="#" className="text-offwhite hover:text-beige-dark"><Instagram /></a>
+            <a href="#" className="text-offwhite hover:text-beige-dark"><Facebook /></a>
           </div>
-          <p className="text-gray-600">&copy; 2024 Espacio Darsha. All rights reserved.</p>
+          <p className="text-offwhite">&copy; 2024 Espacio Darsha. All rights reserved.</p>
         </div>
       </footer>
     </div>

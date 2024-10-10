@@ -12,7 +12,6 @@ const config: Config = {
   		colors: {
         grayishbeige: '#CEC3BA',
         black: '#3D393A',
-        darkgreen: '#1d3437',
         beige: {
           DEFAULT: '#E8E3DD',
           dark: '#D1C7C0',
