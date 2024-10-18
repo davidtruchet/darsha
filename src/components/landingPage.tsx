@@ -1,5 +1,6 @@
-// components/LandingPage.tsx
+'use client'
 
+// components/LandingPage.tsx
 import heroImage from '@/assets/images/hero-img.jpg'
 import heroHome from '@/assets/images/women-home.jpg'
 import verticalImage from '@/assets/images/vertical-prod.jpg'
@@ -20,10 +21,12 @@ import {
   ShoppingBag,
   ArrowRight,
   MessageSquareQuote,
+  Menu
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { Baskervville, Poppins } from 'next/font/google'
+import { useEffect, useState } from 'react'
 
 const baskervville = Baskervville({ 
   weight: '400',
@@ -37,24 +40,65 @@ const poppins = Poppins({
   variable: '--font-poppins',
 })
 
+
 export default function LandingPage() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleSmoothScroll = (e: MouseEvent) => {
+      const target = e.target as HTMLAnchorElement;
+      if (target.hash) {
+        e.preventDefault();
+        const element = document.querySelector(target.hash);
+        if (element) {
+          element.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+        setMobileMenuOpen(false);
+      }
+    };
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', handleSmoothScroll);
+    });
+
+    return () => {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.removeEventListener('click', handleSmoothScroll);
+      });
+    };
+  }, []);
+
   return (
     <div className={`min-h-screen bg-offwhite ${poppins.variable} ${baskervville.variable} font-sans`}>
-      <header className="bg-offwhite shadow-sm">
+      <header className="bg-offwhite shadow-sm fixed top-0 left-0 right-0 z-50">
         <div className="container mx-auto px-4 py-6 flex justify-between items-center">
         <Image src={logoNav} alt="Espacio Darsha" height={60} />
-          <nav>
+          <nav className="hidden md:block">
             <ul className="flex space-x-8">
               <li><a href="#services" className="text-black hover:text-beige uppercase text-lg">Servicios</a></li>
-              <li><a href="#shop" className="text-black hover:text-beige uppercase text-lg">Shop</a></li>
+              <li><a href="#contact" className="text-black hover:text-beige uppercase text-lg">Contacto</a></li>
               <li><a href="#social" className="text-black hover:text-beige uppercase text-lg">Social</a></li>
             </ul>
           </nav>
+          <button aria-label="Menu" className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+              <Menu className="h-6 w-6 text-gray-600" />
+          </button>
         </div>
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-offwhite py-4">
+            <ul className="flex flex-col items-center space-y-4">
+            <li><a href="#services" className="text-black hover:text-beige uppercase text-lg">Servicios</a></li>
+              <li><a href="#contact" className="text-black hover:text-beige uppercase text-lg">Contacto</a></li>
+              <li><a href="#social" className="text-black hover:text-beige uppercase text-lg">Social</a></li>
+            </ul>
+          </div>
+        )}
       </header>
 
-      <main className="bg-grayishbeige">
-        <section className="relative h-[70vh] md:h-[60vh]">
+      <main className="bg-grayishbeige pt-16">
+        <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center">
             <div className="absolute inset-0 overflow-hidden">
                 <Image
                     src={heroHome}
@@ -65,24 +109,24 @@ export default function LandingPage() {
                     quality={100}
                 />
             </div>
-
-
-           <div className="absolute inset-0 flex items-center">
-            <div className="container mx-auto px-4">
-              <div className="max-w-xl bg-grayishbeige bg-opacity-80 p-16 rounded-lg">
-                <h1 className={`text-7xl md:text-6xl ${baskervville.className} mb-4 leading-tight text-gray-900`}>
-                Espacio Darsha
-                </h1>
-                <p className="text-3xl mb-8 text-black">Se tu mejor version de ti</p>
-                <Button size="lg" className="bg-black hover:opacity-60 text-offwhite text-xl">Reserva tu turno</Button>
-              </div>
+          <div className="relative z-10 container mx-auto px-4">
+            <div className="max-w-lg mx-auto md:mx-0 bg-grayishbeige bg-opacity-80 p-6 md:p-8 rounded-lg">
+              <h1 className={`text-4xl md:text-5xl ${baskervville.className} mb-4 leading-tight text-gray-900`}>
+              Espacio Darsha
+              </h1>
+              <p className="text-lg md:text-xl mb-6 text-gray-800">
+              Se tu mejor version de ti
+              </p>
+              <Button size="lg" className="w-full md:w-auto bg-black hover:opacity-60 text-offwhite">
+              Reserva tu turno
+              </Button>
             </div>
           </div>
         </section>
 
         <section id="services" className="bg-offwhite py-16">
           <div className="container mx-auto px-4">
-            <h2 className="text-5xl text-center mb-4">Services</h2>
+            <h2 className="text-4xl md:text-5xl text-center mb-4">Services</h2>
             <p className="text-xl text-center text-black mb-12">
               Relaxation of body and mind in which time does not exist.
             </p>
@@ -121,7 +165,7 @@ export default function LandingPage() {
         <section id="about" className="container mx-auto px-4 py-16">
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 md:pr-8 mb-8 md:mb-0">
-              <h2 className="text-4xl mb-4 text-black">Aroma Therapy</h2>
+              <h2 className="text-4xl md:text-5xl mb-4 text-black">Aroma Therapy</h2>
               <p className="text-black mb-6">
                 Give yourself the ultimate home spa experience with a type of therapy that uses
                 gentle pressure on specific points along your feet (and possibly on your hands or ears as
@@ -146,7 +190,7 @@ export default function LandingPage() {
 
         <section id="reviews" className="bg-offwhite py-16">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl text-center mb-12 text-black">Review from our clients</h2>
+            <h2 className="text-4xl md:text-5xl text-center mb-12 text-black">Review from our clients</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
                 {
@@ -196,8 +240,8 @@ export default function LandingPage() {
         </section>
 
         <section id="contact" className="bg-grayishbeige py-16">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-semibold text-center mb-12 text-black">Contact Us</h2>
+          <div className="container mx-auto px-4" id='contact'>
+            <h2 className="text-3xl font-semibold text-center mb-12 text-black">Contacto</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 { icon: Phone, text: "+1 (555) 123-4567" },
@@ -216,7 +260,7 @@ export default function LandingPage() {
 
       <footer className="bg-black py-8">
         <div className="container mx-auto px-4 text-center">
-          <div className="flex justify-center space-x-4 mb-4">
+          <div className="flex justify-center space-x-4 mb-4" id='social'>
             <a href="#" className="text-offwhite hover:text-beige-dark"><Instagram /></a>
             <a href="#" className="text-offwhite hover:text-beige-dark"><Facebook /></a>
           </div>
