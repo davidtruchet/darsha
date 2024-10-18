@@ -45,7 +45,7 @@ export default function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleSmoothScroll = (e: MouseEvent) => {
+    const handleSmoothScroll = (e: Event) => {
       const target = e.target as HTMLAnchorElement;
       if (target.hash) {
         e.preventDefault();
