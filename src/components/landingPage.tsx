@@ -1,32 +1,27 @@
 'use client'
 
-// components/LandingPage.tsx
+// pages/landingPage.tsx
 import heroImage from '@/assets/images/hero-img.jpg'
 import heroHome from '@/assets/images/women-home.jpg'
 import verticalImage from '@/assets/images/vertical-prod.jpg'
-import verticalImage2 from '@/assets/images/vertical-prod-2.jpg'
-import verticalImage3 from '@/assets/images/vertical-prod-3.jpg'
-import verticalImage4 from '@/assets/images/vertical-prod-4.jpg'
-import verticalImage5 from '@/assets/images/vertical-prod-5.jpg'
-import logoNav from '@/assets/logos/LOGOS-02.png'
+import verticalSkinCare2 from '@/assets/images/skin-care-v2.jpg'
+import verticalImage3 from '@/assets/images/face.jpg'
+import verticalSkinCare from '@/assets/images/skin-care.jpg'
+import verticalBodyCare from '@/assets/images/body-care.jpg'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import {
   Phone,
   MapPin,
   Clock,
-  Instagram,
-  Facebook,
-  Search,
-  ShoppingBag,
   ArrowRight,
   MessageSquareQuote,
-  Menu
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { Baskervville, Poppins } from 'next/font/google'
 import { useEffect, useState } from 'react'
+import MainNavigation from '@/components/navigation'
 
 const baskervville = Baskervville({ 
   weight: '400',
@@ -34,69 +29,10 @@ const baskervville = Baskervville({
   variable: '--font-baskervville',
 })
 
-const poppins = Poppins({ 
-  weight: ['300', '400', '500', '600', '700'],
-  subsets: ['latin'],
-  variable: '--font-poppins',
-})
-
-
 export default function LandingPage() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleSmoothScroll = (e: Event) => {
-      const target = e.target as HTMLAnchorElement;
-      if (target.hash) {
-        e.preventDefault();
-        const element = document.querySelector(target.hash);
-        if (element) {
-          element.scrollIntoView({
-            behavior: 'smooth'
-          });
-        }
-        setMobileMenuOpen(false);
-      }
-    };
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', handleSmoothScroll);
-    });
-
-    return () => {
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.removeEventListener('click', handleSmoothScroll);
-      });
-    };
-  }, []);
-
   return (
-    <div className={`min-h-screen bg-offwhite ${poppins.variable} ${baskervville.variable} font-sans`}>
-      <header className="bg-offwhite shadow-sm fixed top-0 left-0 right-0 z-50">
-        <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-        <Image src={logoNav} alt="Espacio Darsha" height={60} />
-          <nav className="hidden md:block">
-            <ul className="flex space-x-8">
-              <li><a href="#services" className="text-black hover:text-beige uppercase text-lg">Servicios</a></li>
-              <li><a href="#contact" className="text-black hover:text-beige uppercase text-lg">Contacto</a></li>
-              <li><a href="#social" className="text-black hover:text-beige uppercase text-lg">Social</a></li>
-            </ul>
-          </nav>
-          <button aria-label="Menu" className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-              <Menu className="h-6 w-6 text-gray-600" />
-          </button>
-        </div>
-        {mobileMenuOpen && (
-          <div className="md:hidden bg-offwhite py-4">
-            <ul className="flex flex-col items-center space-y-4">
-            <li><a href="#services" className="text-black hover:text-beige uppercase text-lg">Servicios</a></li>
-              <li><a href="#contact" className="text-black hover:text-beige uppercase text-lg">Contacto</a></li>
-              <li><a href="#social" className="text-black hover:text-beige uppercase text-lg">Social</a></li>
-            </ul>
-          </div>
-        )}
-      </header>
-
+    <div className={`min-h-screen bg-offwhite font-sans`}>
+      <MainNavigation />
       <main className="bg-grayishbeige pt-16">
         <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center">
             <div className="absolute inset-0 overflow-hidden">
@@ -111,7 +47,7 @@ export default function LandingPage() {
             </div>
           <div className="relative z-10 container mx-auto px-4">
             <div className="max-w-lg mx-auto md:mx-0 bg-grayishbeige bg-opacity-80 p-6 md:p-8 rounded-lg">
-              <h1 className={`text-4xl md:text-5xl ${baskervville.className} mb-4 leading-tight text-gray-900`}>
+              <h1 className={`text-4xl md:text-5xl ${baskervville.className} font-bold mb-4 text-gray-900`}>
               Espacio Darsha
               </h1>
               <p className="text-lg md:text-xl mb-6 text-gray-800">
@@ -126,16 +62,16 @@ export default function LandingPage() {
 
         <section id="services" className="bg-offwhite py-16">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl md:text-5xl text-center mb-4">Services</h2>
+            <h2 className="text-4xl md:text-5xl text-center mb-4">Servicos</h2>
             <p className="text-xl text-center text-black mb-12">
-              Relaxation of body and mind in which time does not exist.
+            Descubre nuestra gama completa de tratamientos de belleza.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
-                { name: "Hydro Therapy", image: verticalImage },
-                { name: "Sauna Rooms", image: verticalImage3 },
-                { name: "Massages", image: verticalImage },
-                { name: "Reflexology", image: verticalImage3, isNew: true },
+                { name: "Tratamientos Corporales", image: verticalBodyCare },
+                { name: "Tratamientos Faciales", image: verticalSkinCare },
+                { name: "Servicios de Skincare", image: verticalSkinCare2 },
+                { name: "Tienda", image: verticalImage, isNew: true },
               ].map((service, index) => (
                 <div key={index} className="text-center">
                   <div className="relative mb-4">
@@ -257,16 +193,6 @@ export default function LandingPage() {
           </div>
         </section>
       </main>
-
-      <footer className="bg-black py-8">
-        <div className="container mx-auto px-4 text-center">
-          <div className="flex justify-center space-x-4 mb-4" id='social'>
-            <a href="#" className="text-offwhite hover:text-beige-dark"><Instagram /></a>
-            <a href="#" className="text-offwhite hover:text-beige-dark"><Facebook /></a>
-          </div>
-          <p className="text-offwhite">&copy; 2024 Espacio Darsha. All rights reserved.</p>
-        </div>
-      </footer>
     </div>
   )
 }
