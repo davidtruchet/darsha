@@ -62,9 +62,9 @@ export default function MainNavigation() {
         mobileMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
         }`}>
         <ul className="flex flex-col items-center space-y-4 mb-4">
-        <li><Link href="/services" className="text-black hover:text-beige uppercase text-lg">Servicios</Link></li>
+        <li><Link href="/servicios" className="text-black hover:text-beige uppercase text-lg">Servicios</Link></li>
         <li><a href="#contact" className="text-black hover:text-beige uppercase text-lg">Contacto</a></li>
-        <li><a href="#social" className="text-black hover:text-beige uppercase text-lg">Social</a></li>
+        <li><a href="#social" className="text-black hover:text-beige uppercase text-lg">Tienda</a></li>
         </ul>
     </div>
     )}

@@ -16,7 +16,7 @@ export default function ServicesPage() {
       <ServicesHero />
 
       <main className="container mx-auto px-4 py-16">
-        <section className="mb-16">
+        <section className="mb-16" id='corporales'>
           <h2 className={`text-3xl md:text-4xl ${baskervville.className} mb-4`}>Tratamientos Corporales</h2>
           <p className="text-lg text-gray-600 mb-8">
             Descubre nuestros tratamientos corporales diseñados para relajar, rejuvenecer y revitalizar tu cuerpo. Ofrecemos una variedad de servicios que se adaptan a tus necesidades específicas.
@@ -56,7 +56,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section className="mb-16">
+        <section className="mb-16" id='faciales'>
           <h2 className={`text-3xl md:text-4xl ${baskervville.className} mb-4`}>Tratamientos Faciales</h2>
           <p className="text-lg text-gray-600 mb-8">
             Nuestros tratamientos faciales están diseñados para realzar tu belleza natural y mantener una piel saludable. Desde limpiezas profundas hasta tratamientos anti-edad, tenemos algo para cada tipo de piel.
@@ -96,7 +96,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section>
+        <section id='skincare'>
           <h2 className={`text-3xl md:text-4xl ${baskervville.className} mb-4`}>Servicios de Skincare</h2>
           <p className="text-lg text-gray-600 mb-8">
             Nuestros servicios de skincare están diseñados para ayudarte a mantener una piel saludable y radiante. Ofrecemos asesoramiento personalizado y tratamientos adaptados a tus necesidades específicas.

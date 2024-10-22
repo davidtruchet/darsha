@@ -22,6 +22,7 @@ import Link from "next/link"
 import { Baskervville, Poppins } from 'next/font/google'
 import { useEffect, useState } from 'react'
 import MainNavigation from '@/components/navigation'
+import { link } from 'fs'
 
 const baskervville = Baskervville({ 
   weight: '400',
@@ -68,10 +69,10 @@ export default function LandingPage() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
-                { name: "Tratamientos Corporales", image: verticalBodyCare },
-                { name: "Tratamientos Faciales", image: verticalSkinCare },
-                { name: "Servicios de Skincare", image: verticalSkinCare2 },
-                { name: "Tienda", image: verticalImage, isNew: true },
+                { name: "Tratamientos Corporales", image: verticalBodyCare, link: "/servicios#corporales" },
+                { name: "Tratamientos Faciales", image: verticalSkinCare, link: "/servicios#faciales" },
+                { name: "Servicios de Skincare", image: verticalSkinCare2, link: "/servicios#skincare" },
+                { name: "Tienda", image: verticalImage, link: "/servicios", isNew: true },
               ].map((service, index) => (
                 <div key={index} className="text-center">
                   <div className="relative mb-4">
@@ -89,7 +90,7 @@ export default function LandingPage() {
                     )}
                   </div>
                   <h3 className="text-xl font-medium mb-2">{service.name}</h3>
-                  <Link href="#" className="text-black hover:text-beige inline-flex items-center">
+                  <Link href={service.link} className="text-black hover:text-beige inline-flex items-center">
                     Learn more <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
                 </div>
