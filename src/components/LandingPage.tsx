@@ -85,13 +85,13 @@ export default function LandingPage() {
                     />
                     {service.isNew && (
                       <span className="absolute top-2 right-2 bg-black text-offwhite text-xs px-2 py-1 rounded-full">
-                        New
+                        Nuevo
                       </span>
                     )}
                   </div>
                   <h3 className="text-xl font-medium mb-2">{service.name}</h3>
                   <Link href={service.link} className="text-black hover:text-beige inline-flex items-center">
-                    Learn more <ArrowRight className="ml-1 h-4 w-4" />
+                  Más Información <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
                 </div>
               ))}
@@ -101,17 +101,18 @@ export default function LandingPage() {
 
         <section id="about" className="container mx-auto px-4 py-16">
           <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 md:pr-8 mb-8 md:mb-0">
-              <h2 className="text-4xl md:text-5xl mb-4 text-black">Aroma Therapy</h2>
+            <div className="md:w-1/2 md:pr-8 mb-8 md:mb-0 text-xl">
+              <h2 className="text-4xl md:text-5xl mb-6 text-black">Sobre Nosotros</h2>
               <p className="text-black mb-6">
-                Give yourself the ultimate home spa experience with a type of therapy that uses
-                gentle pressure on specific points along your feet (and possibly on your hands or ears as
-                well) to help you feel better. The theory is that this eases stress, and that helps your body
-                work better.
+              En Espacio Darsha, creemos que una piel sana es el reflejo de un cuidado personalizado. Somos un equipo apasionado por el bienestar y la belleza, dedicados a ayudarte a encontrar la rutina de skincare perfecta para ti.
               </p>
-              <Link href="#" className="text-black hover:text-beige-dark inline-flex items-center">
-                Learn more <ArrowRight className="ml-1 h-4 w-4" />
-              </Link>
+              <p className="text-black mb-6">
+Nos especializamos en ofrecer asesoría personalizada para elegir las cremas y productos más adecuados según tu tipo de piel y estilo de vida. Ya sea que busques una limpieza profunda, hidratación o rejuvenecimiento, estamos aquí para guiarte en cada paso del camino.
+              </p>
+              <p className="text-black mb-6">
+Nuestro compromiso es ayudarte a sentirte bien en tu piel, con soluciones de cuidado que realmente funcionen para ti. Con productos cuidadosamente seleccionados y recomendaciones expertas, te ayudamos a lograr una piel radiante y saludable todos los días.
+</p>
+<strong>Tu piel, nuestra pasión.</strong>
             </div>
             <div className="md:w-1/2">
               <Image
@@ -127,33 +128,32 @@ export default function LandingPage() {
 
         <section id="reviews" className="bg-offwhite py-16">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl md:text-5xl text-center mb-12 text-black">Review from our clients</h2>
+            <h2 className="text-4xl md:text-5xl text-center mb-12 text-black">Reseñas de nuestros clientes</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
                 {
-                  name: "John Doe",
-                  title: "Amazing place!",
-                  review: "The service was impeccable and the staff was the best we've met. Thank you from the bottom.",
-                  service: "Sauna Rooms"
+                  name: "Maria Laura",
+                  title: "Excelente lugar!",
+                  review: "Es una excelente profesional. Asesoramiento altamente personalizado y con productos magníficos.",
+                  service: "Peeling, masajes, faciales, radiofrecuencia, relax, limpieza cutis."
                 },
                 {
-                  name: "Jane Smith",
-                  title: "BEST massage",
-                  review: "The BEST massage I have ever had, every time I call Reka Spa to my private venue for body work!",
-                  service: "Massages"
+                  name: "Anahy F.",
+                  title: "Hermoso Espacio",
+                  review: "Hermoso espacio brindado por Euge, una excelente profesional!",
+                  service: ""
                 },
                 {
-                  name: "Mike Johnson",
-                  image: "/placeholder.svg?height=80&width=80",
-                  title: "Wonderful vacation",
-                  review: "Thank you! We have had a wonderful vacation at your heavenly resort. You are precious.",
-                  service: "Reflexology"
+                  name: "Rosimeri B.",
+                  title: "Excelente profesionales",
+                  review: "Eugenia una excelente profesional y una persona divina! La recomiendo siempre.",
+                  service: ""
                 },
                 {
-                  name: "Emily Brown",
-                  title: "Relaxing experience",
-                  review: "The hydro therapy session was incredibly relaxing. I left feeling refreshed and rejuvenated.",
-                  service: "Hydro Therapy"
+                  name: "Antonio R.",
+                  title: "Espacio muy recomendable",
+                  review: "Espacio muy recomendable, Eugenia muy profesional",
+                  service: ""
                 }
               ].map((review, index) => (
                 <Card key={index} className="bg-beige">
@@ -166,9 +166,6 @@ export default function LandingPage() {
                       </div>
                     </div>
                     <p className="mb-4 text-black">{review.review}</p>
-                    <Link href="#" className="text-black hover:text-beige-dark font-semibold inline-flex items-center text-sm">
-                      {review.service} <ArrowRight className="ml-1 h-4 w-4" />
-                    </Link>
                   </CardContent>
                 </Card>
               ))}
@@ -181,9 +178,9 @@ export default function LandingPage() {
             <h2 className="text-3xl font-semibold text-center mb-12 text-black">Contacto</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-                { icon: Phone, text: "+1 (555) 123-4567" },
-                { icon: MapPin, text: "123 Beauty Lane, Cityville" },
-                { icon: Clock, text: "Mon-Sat: 9AM - 7PM" }
+                { icon: Phone, text: "(+598) 92 396 930" },
+                { icon: MapPin, text: "Torre More Atlántico, Punta del Este." },
+                { icon: Clock, text: "Lunes a Viernes de 8:00 a 12:00hs - 16:30 a 20:30hs" }
               ].map(({ icon: Icon, text }) => (
                 <div key={text} className="flex items-center justify-center">
                   <Icon className="mr-2 text-black" />
