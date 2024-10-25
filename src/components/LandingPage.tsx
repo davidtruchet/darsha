@@ -5,7 +5,6 @@ import heroImage from '@/assets/images/hero-img.jpg'
 import heroHome from '@/assets/images/women-home.jpg'
 import verticalImage from '@/assets/images/vertical-prod.jpg'
 import verticalSkinCare2 from '@/assets/images/skin-care-v2.jpg'
-import verticalImage3 from '@/assets/images/face.jpg'
 import verticalSkinCare from '@/assets/images/skin-care.jpg'
 import verticalBodyCare from '@/assets/images/body-care.jpg'
 import { Button } from "@/components/ui/button"
@@ -40,9 +39,9 @@ export default function LandingPage() {
                 <Image
                     src={heroHome}
                     alt="Beautiful woman"
-                    layout="fill"
-                    objectFit="cover"
-                    objectPosition="center 30%"
+                    fill
+                    sizes="100vw"
+                    className="object-cover object-[center_30%]"
                     quality={100}
                 />
             </div>
@@ -120,7 +119,7 @@ Nuestro compromiso es ayudarte a sentirte bien en tu piel, con soluciones de cui
                 alt="Aroma Therapy"
                 width={600}
                 height={600}
-                className="w-full h-auto object-cover"
+                className="transition-transform duration-300 hover:scale-105 object-cover w-full h-auto rounded-2xl"
               />
             </div>
           </div>
