@@ -5,7 +5,7 @@ import heroImage from '@/assets/images/hero-img.jpg'
 import heroHome from '@/assets/images/women-home.jpg'
 import verticalImage from '@/assets/images/vertical-prod.jpg'
 import verticalSkinCare2 from '@/assets/images/skin-care-v2.jpg'
-import verticalSkinCare from '@/assets/images/skin-care.jpg'
+import verticalSkinCare from '@/assets/images/spa-face-mask.jpg'
 import verticalBodyCare from '@/assets/images/body-care.jpg'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -19,9 +19,7 @@ import {
 import Image from "next/image"
 import Link from "next/link"
 import { Baskervville, Poppins } from 'next/font/google'
-import { useEffect, useState } from 'react'
 import MainNavigation from '@/components/navigation'
-import { link } from 'fs'
 
 const baskervville = Baskervville({ 
   weight: '400',
@@ -51,7 +49,7 @@ export default function LandingPage() {
               Espacio Darsha
               </h1>
               <p className="text-lg md:text-xl mb-6 text-gray-800">
-              Se tu mejor version de ti
+              Invierte en ti. Eres tu proyecto mas importante..
               </p>
               <Button size="lg" className="w-full md:w-auto bg-black hover:opacity-60 text-offwhite">
               Reserva tu turno
@@ -61,37 +59,45 @@ export default function LandingPage() {
         </section>
 
         <section id="services" className="bg-offwhite py-16">
-          <div className="container mx-auto px-4">
-            <h2 className="text-4xl md:text-5xl text-center mb-4">Servicos</h2>
-            <p className="text-xl text-center text-black mb-12">
+          <div className="container mx-auto px-4 text-gray-900">
+            <h2 className={`text-4xl md:text-5xl text-center mb-4 ${baskervville.className}`}>Servicios</h2>
+            <p className="text-xl text-center mb-12">
             Descubre nuestra gama completa de tratamientos de belleza.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 { name: "Tratamientos Corporales", image: verticalBodyCare, link: "/servicios#corporales" },
                 { name: "Tratamientos Faciales", image: verticalSkinCare, link: "/servicios#faciales" },
                 { name: "Servicios de Skincare", image: verticalSkinCare2, link: "/servicios#skincare" },
                 { name: "Tienda", image: verticalImage, link: "/servicios", isNew: true },
               ].map((service, index) => (
-                <div key={index} className="text-center">
-                  <div className="relative mb-4">
-                    <Image
-                      src={service.image}
-                      alt={service.name}
-                      width={300}
-                      height={300}
-                      className="rounded-full mx-auto"
-                    />
-                    {service.isNew && (
-                      <span className="absolute top-2 right-2 bg-black text-offwhite text-xs px-2 py-1 rounded-full">
-                        Nuevo
-                      </span>
-                    )}
+                <div key={index} className="text-center group">
+                  <Link href={service.link} className="block">
+                  <div className="relative mb-4 aspect-square w-[300px] sm:w-[280px] lg:w-[260px] xl:w-[300px] mx-auto">
+                    <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-transparent transition-all duration-300 group-hover:border-beige">
+                      <Image
+                        src={service.image}
+                        alt={service.name}
+                        fill
+                        sizes="(max-width: 640px) 300px, (max-width: 768px) 280px, (max-width: 1024px) 260px, 300px"
+                        className="object-cover transition-transform duration-300 group-hover:scale-110"
+                      />
+                      {service.isNew && (
+                  <div className="absolute inset-0">
+                  <span className="absolute right-[15%] top-[12%] bg-black text-offwhite text-xs px-3 py-1 rounded-full z-10 transform -rotate-12">
+                    Nuevo
+                  </span>
+                </div>
+                      )}
+                    </div>
                   </div>
-                  <h3 className="text-xl font-medium mb-2">{service.name}</h3>
-                  <Link href={service.link} className="text-black hover:text-beige inline-flex items-center">
-                  Más Información <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
+                  <h3 className="text-xl font-medium mb-2 transition-colors duration-300 group-hover:text-gray-500">
+                    {service.name}
+                  </h3>
+                  <span className="text-black group-hover:text-gray-500 inline-flex items-center transition-colors duration-300">
+                    Más Información <ArrowRight className="ml-1 h-4 w-4" />
+                  </span>
+                </Link>
                 </div>
               ))}
             </div>
@@ -100,15 +106,15 @@ export default function LandingPage() {
 
         <section id="about" className="container mx-auto px-4 py-16">
           <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 md:pr-8 mb-8 md:mb-0 text-xl">
-              <h2 className="text-4xl md:text-5xl mb-6 text-black">Sobre Nosotros</h2>
-              <p className="text-black mb-6">
+            <div className="md:w-1/2 md:pr-8 mb-8 md:mb-0 text-xl text-gray-900">
+              <h2 className={`text-4xl md:text-5xl mb-6 ${baskervville.className}`}>Sobre Nosotros</h2>
+              <p className="mb-6">
               En Espacio Darsha, creemos que una piel sana es el reflejo de un cuidado personalizado. Somos un equipo apasionado por el bienestar y la belleza, dedicados a ayudarte a encontrar la rutina de skincare perfecta para ti.
               </p>
-              <p className="text-black mb-6">
+              <p className="mb-6">
 Nos especializamos en ofrecer asesoría personalizada para elegir las cremas y productos más adecuados según tu tipo de piel y estilo de vida. Ya sea que busques una limpieza profunda, hidratación o rejuvenecimiento, estamos aquí para guiarte en cada paso del camino.
               </p>
-              <p className="text-black mb-6">
+              <p className="mb-6">
 Nuestro compromiso es ayudarte a sentirte bien en tu piel, con soluciones de cuidado que realmente funcionen para ti. Con productos cuidadosamente seleccionados y recomendaciones expertas, te ayudamos a lograr una piel radiante y saludable todos los días.
 </p>
 <strong>Tu piel, nuestra pasión.</strong>
@@ -127,7 +133,7 @@ Nuestro compromiso es ayudarte a sentirte bien en tu piel, con soluciones de cui
 
         <section id="reviews" className="bg-offwhite py-16">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl md:text-5xl text-center mb-12 text-black">Reseñas de nuestros clientes</h2>
+            <h2 className={`text-4xl md:text-5xl text-center mb-12 text-gray-900 ${baskervville.className}`}>Reseñas de nuestros clientes</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
                 {
