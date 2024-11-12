@@ -50,7 +50,7 @@ export default function LandingPage() {
               Espacio Darsha
               </h1>
               <p className="text-lg md:text-xl mb-6 text-gray-800">
-              Invierte en ti. Eres tu proyecto mas importante..
+              Invierte en ti, eres tu proyecto más importante.
               </p>
               <Button size="lg" className="w-full md:w-auto bg-black hover:opacity-60 text-offwhite">
               Reserva tu turno
