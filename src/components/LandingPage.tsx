@@ -107,8 +107,8 @@ export default function LandingPage() {
 
         <section id="about" className="container mx-auto px-4 py-16">
           <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 md:pr-8 mb-8 md:mb-0 text-xl text-gray-900">
-              <h2 className={`text-4xl md:text-5xl mb-6 ${baskervville.className}`}>Sobre Nosotros</h2>
+            <div className={`md:w-1/2 md:pr-8 mb-8 md:mb-0 text-xl text-gray-900  ${baskervville.className}`}>
+              <h2 className={`text-3xl md:text-5xl mb-6`}>Sobre Nosotros</h2>
               <p className="mb-6">
               Espacio Darsha se creó con un propósito claro: ofrecer un lugar de bienestar y relajación donde las personas puedan tomarse un momento para sí mismas. Creemos en la importancia de cuidar cuerpo y mente para alcanzar una armonía integral, y por eso hemos desarrollado un ambiente acogedor y profesional.
               </p>
