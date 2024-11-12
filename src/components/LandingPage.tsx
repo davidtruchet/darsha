@@ -12,7 +12,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import {
   Phone,
   MapPin,
-  Clock,
+  MessageCircle,
   ArrowRight,
   MessageSquareQuote,
 } from "lucide-react"
@@ -20,6 +20,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Baskervville, Poppins } from 'next/font/google'
 import MainNavigation from '@/components/navigation'
+import { link } from 'fs'
 
 const baskervville = Baskervville({ 
   weight: '400',
@@ -109,15 +110,14 @@ export default function LandingPage() {
             <div className="md:w-1/2 md:pr-8 mb-8 md:mb-0 text-xl text-gray-900">
               <h2 className={`text-4xl md:text-5xl mb-6 ${baskervville.className}`}>Sobre Nosotros</h2>
               <p className="mb-6">
-              En Espacio Darsha, creemos que una piel sana es el reflejo de un cuidado personalizado. Somos un equipo apasionado por el bienestar y la belleza, dedicados a ayudarte a encontrar la rutina de skincare perfecta para ti.
+              Espacio Darsha se creó con un propósito claro: ofrecer un lugar de bienestar y relajación donde las personas puedan tomarse un momento para sí mismas. Creemos en la importancia de cuidar cuerpo y mente para alcanzar una armonía integral, y por eso hemos desarrollado un ambiente acogedor y profesional.
               </p>
               <p className="mb-6">
-Nos especializamos en ofrecer asesoría personalizada para elegir las cremas y productos más adecuados según tu tipo de piel y estilo de vida. Ya sea que busques una limpieza profunda, hidratación o rejuvenecimiento, estamos aquí para guiarte en cada paso del camino.
+              En nuestro consultorio, brindamos una variedad de tratamientos de cosmetología y masajes, enfocados en mejorar el bienestar físico y emocional de nuestros clientes. Ya sea para relajarse, revitalizarse o cuidar de su piel, Espacio Darsha es el lugar ideal para encontrar ese equilibrio tan necesario en la vida diaria.
               </p>
               <p className="mb-6">
-Nuestro compromiso es ayudarte a sentirte bien en tu piel, con soluciones de cuidado que realmente funcionen para ti. Con productos cuidadosamente seleccionados y recomendaciones expertas, te ayudamos a lograr una piel radiante y saludable todos los días.
+              Nos comprometemos a ofrecer una atención personalizada, siempre guiados por valores de profesionalismo, responsabilidad y calidad. Aquí, cada cliente es importante, y trabajamos para que cada experiencia en nuestro espacio sea única y gratificante.
 </p>
-<strong>Tu piel, nuestra pasión.</strong>
             </div>
             <div className="md:w-1/2">
               <Image
@@ -150,14 +150,14 @@ Nuestro compromiso es ayudarte a sentirte bien en tu piel, con soluciones de cui
                 },
                 {
                   name: "Rosimeri B.",
-                  title: "Excelente profesionales",
+                  title: "Excelente profesional",
                   review: "Eugenia una excelente profesional y una persona divina! La recomiendo siempre.",
                   service: ""
                 },
                 {
-                  name: "Antonio R.",
+                  name: "Carolina R.",
                   title: "Espacio muy recomendable",
-                  review: "Espacio muy recomendable, Eugenia muy profesional",
+                  review: "Muy recomendable. Excelente profesional Euge y servicios que brinda son maravillosos.  Ideal para las que nos gusta darnos un mimo…",
                   service: ""
                 }
               ].map((review, index) => (
@@ -183,14 +183,23 @@ Nuestro compromiso es ayudarte a sentirte bien en tu piel, con soluciones de cui
             <h2 className="text-3xl font-semibold text-center mb-12 text-black">Contacto</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-                { icon: Phone, text: "(+598) 92 396 930" },
-                { icon: MapPin, text: "Torre More Atlántico, Punta del Este." },
-                { icon: Clock, text: "Lunes a Viernes de 8:00 a 12:00hs - 16:30 a 20:30hs" }
-              ].map(({ icon: Icon, text }) => (
-                <div key={text} className="flex items-center justify-center">
-                  <Icon className="mr-2 text-black" />
-                  <span>{text}</span>
-                </div>
+                { icon: Phone, text: "(+598) 92 396 930", link: "tel:+59892396930" },
+                { icon: MapPin, text: "Torre More Atlántico, Punta del Este.", link: "https://maps.app.goo.gl/f3LTCc6VSpLwAVWq6" },
+                { icon: MessageCircle, text: "Contacto de Whatsapp", link: "https://wa.link/zzwej7" },
+              ].map(({ icon: Icon, text, link }) => (
+                // add an optional link to this element
+                <a
+                  key={text}
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center"
+                >
+                  <div key={text} className="flex items-center justify-center">
+                    <Icon className="mr-2 text-black" />
+                    <span>{text}</span>
+                  </div>
+                </a>
               ))}
             </div>
           </div>
