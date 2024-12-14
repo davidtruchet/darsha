@@ -1,7 +1,6 @@
 'use client'
 
 // pages/landingPage.tsx
-import heroImage from '@/assets/images/hero-img.jpg'
 import heroHome from '@/assets/images/women-home.jpg'
 import verticalImage from '@/assets/images/vertical-prod.jpg'
 import verticalSkinCare2 from '@/assets/images/skin-care-v2.jpg'
@@ -52,9 +51,11 @@ export default function LandingPage() {
               <p className="text-lg md:text-xl mb-6 text-gray-800">
               Invierte en ti, eres tu proyecto más importante.
               </p>
-              <Button size="lg" className="w-full md:w-auto bg-black hover:opacity-60 text-offwhite">
-              Reserva tu turno
-              </Button>
+                <Button size="lg" className="w-full md:w-auto bg-black hover:opacity-60 text-offwhite" asChild>
+                <Link href="https://www.fresha.com/es/book-now/espacio-darsha-iu9k6x5w/all-offer?id=1457941&share&pId=1384540" target="_blank" rel="noopener noreferrer">
+                  Reserva tu turno
+                </Link>
+                </Button>
             </div>
           </div>
         </section>
@@ -63,14 +64,14 @@ export default function LandingPage() {
           <div className="container mx-auto px-4 text-gray-900">
             <h2 className={`text-4xl md:text-5xl text-center mb-4 ${baskervville.className}`}>Servicios</h2>
             <p className="text-xl text-center mb-12">
-            Descubre nuestra gama completa de tratamientos de belleza.
+            Descubre nuestra gama completa de tratamientos de belleza
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 { name: "Tratamientos Corporales", image: verticalBodyCare, link: "/servicios#corporales" },
                 { name: "Tratamientos Faciales", image: verticalSkinCare, link: "/servicios#faciales" },
                 { name: "Servicios de Skincare", image: verticalSkinCare2, link: "/servicios#skincare" },
-                { name: "Tienda", image: verticalImage, link: "/servicios", isNew: true },
+                { name: "Tienda", image: verticalImage, link: "/", isNew: true },
               ].map((service, index) => (
                 <div key={index} className="text-center group">
                   <Link href={service.link} className="block">
@@ -86,7 +87,7 @@ export default function LandingPage() {
                       {service.isNew && (
                   <div className="absolute inset-0">
                   <span className="absolute right-[15%] top-[12%] bg-black text-offwhite text-xs px-3 py-1 rounded-full z-10 transform -rotate-12">
-                    Nuevo
+                    Proximamente!
                   </span>
                 </div>
                       )}
@@ -120,12 +121,12 @@ export default function LandingPage() {
 </p>
             </div>
             <div className="md:w-1/2">
-              <Image
-                src={heroImage}
-                alt="Aroma Therapy"
-                width={600}
-                height={600}
-                className="transition-transform duration-300 hover:scale-105 object-cover w-full h-auto rounded-2xl"
+              <video
+                src='/videos/hero.mp4' // Make sure to define `heroVideo` with the path to your video file}
+                className="object-cover w-full h-auto rounded-2xl max-h-[650px]"
+                loop
+                autoPlay
+                muted
               />
             </div>
           </div>

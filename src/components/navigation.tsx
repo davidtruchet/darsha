@@ -47,9 +47,8 @@ export default function MainNavigation() {
     </Link>
     <nav className="hidden md:block">
         <ul className="flex space-x-8">
-        <li><Link href="/servicios" className="text-black hover:text-beige uppercase text-lg">Servicios</Link></li>
-        <li><a href="#contact" className="text-black hover:text-beige uppercase text-lg">Contacto</a></li>
-        <li><a href="#social" className="text-black hover:text-beige uppercase text-lg">Tienda</a></li>
+        <li><Link href="/servicios" className="text-black hover:opacity-60 uppercase text-lg">Servicios</Link></li>
+        <li><a href="#contact" className="text-black hover:opacity-60 uppercase text-lg">Contacto</a></li>
         </ul>
     </nav>
     <button aria-label="Menu" className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
@@ -62,9 +61,8 @@ export default function MainNavigation() {
         mobileMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
         }`}>
         <ul className="flex flex-col items-center space-y-4 mb-4">
-        <li><Link href="/servicios" className="text-black hover:text-beige uppercase text-lg">Servicios</Link></li>
-        <li><a href="#contact" className="text-black hover:text-beige uppercase text-lg">Contacto</a></li>
-        <li><a href="#social" className="text-black hover:text-beige uppercase text-lg">Tienda</a></li>
+        <li><Link href="/servicios" className="text-black hover:opacity-60 uppercase text-lg">Servicios</Link></li>
+        <li><a href="#contact" className="text-black hover:opacity-60 uppercase text-lg">Contacto</a></li>
         </ul>
     </div>
     )}
