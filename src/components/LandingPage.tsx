@@ -122,7 +122,7 @@ export default function LandingPage() {
             </div>
             <div className="md:w-1/2">
               <video
-                src='/videos/hero.mp4' // Make sure to define `heroVideo` with the path to your video file}
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH}/videos/hero.mp4`}
                 className="object-cover w-full h-auto rounded-2xl max-h-[650px]"
                 loop
                 autoPlay
