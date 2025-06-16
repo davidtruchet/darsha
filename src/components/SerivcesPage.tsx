@@ -9,6 +9,7 @@ import seviceFacial from '@/assets/images/servicos-faciales.jpg'
 import seviceSkinCare from '@/assets/images/skin-care-2.jpg'
 
 import { Clock, DollarSign, RefreshCw } from 'lucide-react'
+import AlternativeFacialsSection from './AlternativeFacialsSection'
 
 const baskervville = Baskervville({
   weight: '400',
@@ -22,8 +23,8 @@ export default function ServicesPage() {
       <MainNavigation />
       <ServicesHero />
 
-      <main className="container mx-auto px-4 py-16">
-        <section className="mb-16" id='corporales'>
+      <main className="min-h-screen py-16">
+        <section className="mb-16 container mx-auto px-4 " id='corporales'>
           <div className="flex flex-col md:flex-row items-center justify-between mb-12 gap-8">
             <div className="md:w-1/2">
               <h2 className={`text-4xl md:text-5xl font-bold mb-4 leading-tight ${baskervville.className}`}>Tratamientos Corporales</h2>
@@ -75,7 +76,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section className="mb-16" id='faciales'>
+        <section className="mb-16 container mx-auto px-4 " id='faciales'>
         <div className="flex flex-col md:flex-row items-center justify-between mb-12 gap-8">
           <div className="md:w-1/2">
               <div className="relative w-full aspect-[4/3] h-64 md:h-80 rounded-2xl overflow-hidden">
@@ -169,7 +170,14 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section id='skincare'>
+        {/* Alternative Facials Section */}
+        <div className="container mx-auto px-4 py-8">
+          <div className="border-t border-gray-200 my-8"></div>
+          <h2 className={`text-3xl font-bold mb-8 text-center ${baskervville.className}`}>Versión Alternativa</h2>
+        </div>
+        <AlternativeFacialsSection image={seviceFacial} />
+
+        <section id='skincare' className="container mx-auto px-4 mt-8">
         <div className="flex flex-col md:flex-row items-center justify-between mb-12 gap-8">
             <div className="md:w-1/2">
               <h2 className={`text-4xl md:text-5xl font-bold mb-4 leading-tight ${baskervville.className}`}>Servicios de Skincare</h2>
