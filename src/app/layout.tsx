@@ -17,7 +17,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Espacio Darsha",
-  description: "Espacio Darsha es un centro de estética que ofrece tratamientos corporales, faciales y masajes personalizados. Descubre un espacio pensado para tu bienestar y belleza.",
+  description: "Espacio Darsha es un centro de estética que ofrece tratamientos corporales, faciales y masajes. Descubre un espacio pensado para tu bienestar y belleza.",
 };
 
 export default function RootLayout({
