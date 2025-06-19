@@ -25,11 +25,11 @@ interface Treatment {
   frequency?: string;
 }
 
-interface AlternativeFacialsSectionProps {
+interface FacialsSectionProps {
   image: StaticImageData;
 }
 
-const AlternativeFacialsSection: React.FC<AlternativeFacialsSectionProps> = ({ image }) => {
+const FacialsSection: React.FC<FacialsSectionProps> = ({ image }) => {
   // State for content heights and refs
   const [contentHeights, setContentHeights] = useState<{ [key: number]: number }>({});
   const contentRefs = useRef<{ [key: number]: HTMLDivElement | null }>({});
@@ -135,7 +135,7 @@ const AlternativeFacialsSection: React.FC<AlternativeFacialsSectionProps> = ({ i
   };
 
   return (
-    <section className="py-16 w-full bg-[#f8f5f2]" id="faciales-alt">
+    <section className="py-16 w-full" id="faciales">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row gap-8 pb-8">
           <div className="md:w-1/2">
@@ -196,18 +196,18 @@ const AlternativeFacialsSection: React.FC<AlternativeFacialsSectionProps> = ({ i
                       <div className="space-y-3 mb-8">
                         <div className="flex items-center gap-2">
                           <Clock className="h-5 w-5 text-gray-400" />
-                          <span className="text-sm">Duración: {treatment.duration}</span>
+                          <span className="text-sm"> {treatment.duration}</span>
                         </div>
 
                         <div className="flex items-center gap-2">
                           <DollarSign className="h-5 w-5 text-gray-400" />
-                          <span className="text-sm">Valor: ${treatment.price}</span>
+                          <span className="text-sm"> {treatment.price}</span>
                         </div>
 
                         {treatment.frequency && (
                           <div className="flex items-center gap-2">
                             <RefreshCw className="h-5 w-5 text-gray-400" />
-                            <span className="text-sm">Frecuencia: {treatment.frequency}</span>
+                            <span className="text-sm"> {treatment.frequency}</span>
                           </div>
                         )}
                       </div>
@@ -264,4 +264,4 @@ const AlternativeFacialsSection: React.FC<AlternativeFacialsSectionProps> = ({ i
   );
 };
 
-export default AlternativeFacialsSection;
+export default FacialsSection;
