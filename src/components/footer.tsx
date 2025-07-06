@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="flex justify-center space-x-4 mb-4" id='social'>
             <a href="https://www.instagram.com/espaciodarsha/" target="_blank" className="text-offwhite hover:text-beige-dark"><Instagram /></a>
         </div>
-        <p className="text-offwhite">&copy; 2024 Espacio Darsha. All rights reserved.</p>
+        <p className="text-offwhite">&copy; {new Date().getFullYear()} Espacio Darsha. All rights reserved.</p>
         </div>
     </footer>
     )

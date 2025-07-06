@@ -123,9 +123,7 @@ const AlternativeFacialsSection: React.FC<AlternativeFacialsSectionProps> = ({ i
           </div>
           <div className="md:w-1/2">
             <p className="text-xl text-gray-600">
-              En Espacio Darsha brindamos tratamientos corporales para mejorar la firmeza, la calidad de la piel y el bienestar general.
-              Utilizamos técnicas profesionales como radiofrecuencia, electrodos, masajes y peelings, adaptando cada protocolo a las necesidades de tu cuerpo.
-              Combinamos tecnología, cuidado y efectividad para ofrecerte resultados visibles en un entorno armonioso.
+            Tratamientos corporales personalizados para mejorar firmeza, piel y bienestar, con tecnología estética y cuidado profesional.
             </p>
           </div>
         </div>

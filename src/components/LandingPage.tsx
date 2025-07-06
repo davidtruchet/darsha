@@ -66,23 +66,22 @@ export default function LandingPage() {
             <p className="text-xl text-center mb-12">
             Descubre nuestra gama completa de tratamientos de belleza
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 { name: "Tratamientos Corporales", image: verticalBodyCare, link: "/servicios#corporales" },
                 { name: "Tratamientos Faciales", image: verticalSkinCare, link: "/servicios#faciales" },
-                { name: "Servicios de Skincare", image: verticalSkinCare2, link: "/servicios#skincare" },
                 { name: "Tienda", image: verticalImage, link: "/", isNew: true },
               ].map((service, index) => (
                 <div key={index} className="text-center group">
                   <Link href={service.link} className="block">
-                  <div className="relative mb-4 aspect-square w-[300px] sm:w-[280px] lg:w-[260px] xl:w-[300px] mx-auto">
-                    <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-transparent transition-all duration-300 group-hover:border-beige">
+                  <div className="relative mb-4 aspect-square w-[400px] sm:w-[280px] lg:w-[260px] xl:w-[360px] mx-auto">
+                    <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-transparent group-hover:border-beige">
                       <Image
                         src={service.image}
                         alt={service.name}
                         fill
-                        sizes="(max-width: 640px) 300px, (max-width: 768px) 280px, (max-width: 1024px) 260px, 300px"
-                        className="object-cover transition-transform duration-300 group-hover:scale-110"
+                        sizes="(max-width: 640px) 300px, (max-width: 768px) 280px, (max-width: 1024px) 360px, 400px"
+                        className="object-cover"
                       />
                       {service.isNew && (
                   <div className="absolute inset-0">

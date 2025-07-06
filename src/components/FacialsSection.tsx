@@ -38,25 +38,25 @@ const FacialsSection: React.FC<FacialsSectionProps> = ({ image }) => {
   const treatments: Treatment[] = [
     {
       title: "Limpieza Facial Profunda",
-      description: "Una experiencia completa para renovar, equilibrar y cuidar tu piel desde el primer paso. Este tratamiento comienza con una evaluación personalizada, seguida de una limpieza, exfoliación química o mecánica, aplicación de puntas de diamante o renovadores celulares, extracciones, y finaliza con una máscara y sérum adaptados a las necesidades de tu piel, hidratación y protector solar.",
+      description: "Una experiencia completa para cuidar, renovar y equilibrar tu piel desde el primer paso. El tratamiento incluye: evaluación personalizada, limpieza profunda, exfoliación química o mecánica, aplicación de puntas de diamante o renovadores celulares, extracciones, máscara y sérum adaptados a tu piel, hidratación y protector solar. Ideal para eliminar impurezas, mejorar la textura, oxigenar la piel y potenciar tu rutina de cuidado facial.",
       price: "1.600",
       duration: "60 a 70 minutos"
     },
     {
       title: "Tratamiento Revitalizante con Velo de Colágeno",
-      description: "Una caricia nutritiva para pieles que necesitan recuperar frescura, hidratación y luminosidad. Comienza con una evaluación personalizada, seguida de limpieza suave, exfoliación profunda y tonificación, para preparar la piel. Luego se aplica un velo de colágeno, que aporta elasticidad, firmeza y efecto tensor inmediato.",
+      description: "Una caricia nutritiva para pieles que necesitan frescura, hidratación y luminosidad. Incluye: evaluación personalizada, limpieza suave, exfoliación profunda, tonificación, aplicación de velo de colágeno con efecto tensor, crema hidratante y protector solar. Ideal para pieles apagadas, deshidratadas o con signos de fatiga.",
       price: "1.800",
       duration: "60 a 70 minutos"
     },
     {
       title: "Tratamiento Iluminador con Radiofrecuencia y Vitamina C",
-      description: "Un protocolo completo para devolverle a tu piel su vitalidad natural, suavidad y luminosidad. Comienza con una limpieza profunda y exfoliación con puntas de diamante para renovar la superficie cutánea. Luego se aplica radiofrecuencia facial, que estimula el colágeno y mejora la firmeza.",
+      description: "Un protocolo completo para devolverle a tu piel vitalidad, suavidad y luminosidad. Incluye: limpieza profunda, exfoliación con puntas de diamante, radiofrecuencia facial, loción de vitamina C, máscara tensora, sérum regenerador, hidratación y protector solar. Ideal para pieles opacas, cansadas o con primeros signos de envejecimiento.",
       price: "1.900",
       duration: "70 minutos"
     },
     {
       title: "Limpieza Facial + Masaje Yoga Facial",
-      description: "Un tratamiento que combina limpieza profunda con una experiencia relajante y restauradora para tu rostro. Finaliza con una secuencia de masajes de yoga facial, que relajan los músculos del rostro, mejoran la circulación y realzan la luminosidad natural.",
+      description: "Una limpieza profunda combinada con una experiencia relajante y restauradora para tu rostro. Incluye: evaluación de la piel, limpieza, exfoliación, extracciones, tonificación, máscara descongestiva e hidratante, emulsión según tu tipo de piel y una secuencia de masajes de yoga facial, que relajan los músculos, mejoran la circulación y realzan la luminosidad natural. Ideal para purificar, equilibrar y revitalizar tu piel.",
       price: "1.900",
       duration: "75 minutos"
     },
@@ -146,8 +146,8 @@ const FacialsSection: React.FC<FacialsSectionProps> = ({ image }) => {
           <div className="md:w-1/2">
 
             <p className="text-xl text-gray-600">
-              Tratamientos diseñados para cuidar, renovar y realzar la belleza natural de tu piel.
-              Combinamos tecnología estética, productos profesionales y atención personalizada para brindarte resultados visibles y una experiencia de bienestar en cada sesión.
+            Tratamientos diseñados para realzar la belleza natural de tu piel con tecnología estética, productos profesionales y atención personalizada. 
+            Cada sesión está pensada para brindarte resultados visibles y una experiencia de bienestar.  
             </p>
           </div>
         </div>
