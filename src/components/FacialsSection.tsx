@@ -70,30 +70,37 @@ const FacialsSection: React.FC<FacialsSectionProps> = ({ image }) => {
     },
     {
       title: "Limpieza Facial Deluxe",
-      description: "El equilibrio perfecto entre limpieza profunda, cuidado personalizado y un momento de relajación. Este tratamiento integral comienza con una evaluación profesional de la piel, para adaptar cada paso a tus necesidades. Se realiza una limpieza profunda con tecnología de puntas de diamante que renueva la piel.",
+      description: "Una experiencia completa que combina limpieza profunda, cuidado personalizado y relajación. Incluye evaluación de la piel, limpieza con puntas de diamante, vapor de ozono, extracciones, mascarilla, suero, hidratación intensa y masajes en rostro, cuello y escote. Finaliza con fotoprotección.",
       price: "1.900",
       duration: "75 minutos"
     },
     {
       title: "Tratamiento Anti-Acné",
-      description: "Un plan progresivo y personalizado para pieles con tendencia acneica, pensado para transformar la piel desde adentro hacia afuera. El objetivo es limpiar profundamente la piel, eliminar comedones, equilibrar la oleosidad, suavizar marcas y manchas.",
+      description: "Plan progresivo y personalizado para pieles con acné, que trabaja en profundidad para equilibrar, limpiar y renovar la piel. Cada sesión incluye técnicas y productos específicos para regular el sebo, tratar imperfecciones, suavizar marcas y lograr una piel más clara y uniforme.",
       price: "1.700 por sesión | Pack x3 sesiones: 4.500",
       duration: "60 minutos",
-      frequency: "Cada 10 a 15 días por un mínimo de 3 meses"
+      frequency: "cada 10 a 15 días (mínimo 3 meses)"
     },
     {
       title: "Tratamiento Despigmentante",
-      description: "Un tratamiento integral para atenuar manchas solares, hormonales o post-acné, devolviendo a la piel un tono más uniforme, luminoso y saludable. En cada sesión se realiza un peeling en consultorio, adaptado al tipo de piel y al grado de pigmentación.",
+      description: "Ideal para atenuar manchas solares, hormonales o post-acné, recuperando un tono más uniforme, luminoso y saludable. Incluye peelings personalizados en consultorio y acompañamiento con producto despigmentante domiciliario. Se recomienda un mínimo de 6 sesiones (cada 15 días) durante 3 meses.",
       price: "1.700 por sesión | Pack x3 sesiones: 4.500",
       duration: "45 a 60 minutos",
-      frequency: "Cada 15 días durante al menos 3 meses"
+      frequency: "cada 15 días (mínimo 3 meses)"
     },
     {
       title: "Lifting Facial Reafirmante Timexpert Lift(In)",
-      description: "Redefinición facial sin cirugía – Efecto lifting visible desde la primera sesión. Un tratamiento de alta cosmética profesional diseñado para reafirmar, tensar y redefinir el contorno del rostro. Inspirado en las técnicas médico-estéticas.",
+      description: "Tratamiento de alta cosmética profesional con productos Germaine de Capuccini, diseñado para reafirmar, tensar y redefinir el contorno facial, con efecto lifting visible desde la primera sesión. Actúa en profundidad para combatir flacidez, signos de cansancio y pérdida de firmeza. Ideal para pieles maduras o con primeros signos de flacidez.",
       price: "2.500",
       duration: "60 minutos",
-      frequency: "1 sesión por semana | Mínimo: 3 sesiones"
+      frequency: "1 vez por semana (mínimo 3 sesiones)"
+    },
+    {
+      title: "Peeling Químico Profesional",
+      description: "Tratamiento dermocosmético que renueva la piel en profundidad mediante la aplicación de ácidos específicos. Ayuda a mejorar la textura, unificar el tono, reducir manchas, controlar el acné y atenuar líneas finas. Se adapta al tipo de piel y a los objetivos de cada persona, logrando una piel más luminosa, suave y revitalizada desde las primeras sesiones.",
+      price: "1.700",
+      duration: "45 a 60 minutos",
+      frequency: "cada 15 días"
     }
   ];
 
