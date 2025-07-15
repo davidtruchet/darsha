@@ -3,6 +3,7 @@
 // pages/landingPage.tsx
 import heroHome from '@/assets/images/women-home.jpg'
 import verticalImage from '@/assets/images/vertical-prod.jpg'
+import contactUsImage from '@/assets/images/contact-us.jpg'
 import verticalSkinCare2 from '@/assets/images/skin-care-v2.jpg'
 import verticalSkinCare from '@/assets/images/spa-face-mask.jpg'
 import verticalBodyCare from '@/assets/images/body-care.jpg'
@@ -52,7 +53,7 @@ export default function LandingPage() {
               Invierte en ti, eres tu proyecto más importante.
               </p>
                 <Button size="lg" className="w-full md:w-auto bg-black hover:opacity-60 text-offwhite" asChild>
-                <Link href="https://www.fresha.com/es/book-now/espacio-darsha-iu9k6x5w/all-offer?id=1457941&share&pId=1384540" target="_blank" rel="noopener noreferrer">
+                <Link href="https://wa.me/59894123456" target="_blank" rel="noopener noreferrer">
                   Reserva tu turno
                 </Link>
                 </Button>
@@ -107,7 +108,7 @@ export default function LandingPage() {
 
         <section id="about" className="container mx-auto px-4 py-16">
           <div className="flex flex-col md:flex-row items-center">
-            <div className={`md:w-1/2 md:pr-8 mb-8 md:mb-0 text-xl text-gray-900  ${baskervville.className}`}>
+            <div className={`md:w-1/2 md:pr-10 mb-8 md:mb-0 text-xl text-gray-900  ${baskervville.className}`}>
               <h2 className={`text-3xl md:text-5xl mb-6`}>Sobre Nosotros</h2>
               <p className="mb-6">
               Espacio Darsha se creó con un propósito claro: ofrecer un lugar de bienestar y relajación donde las personas puedan tomarse un momento para sí mismas. Creemos en la importancia de cuidar cuerpo y mente para alcanzar una armonía integral, y por eso hemos desarrollado un ambiente acogedor y profesional.
@@ -120,12 +121,10 @@ export default function LandingPage() {
 </p>
             </div>
             <div className="md:w-1/2">
-              <video
-                src={`${process.env.NEXT_PUBLIC_BASE_PATH}/videos/hero.mp4`}
+              <img
+                src={contactUsImage.src}
+                alt="Contact Us"
                 className="object-cover w-full h-auto rounded-2xl max-h-[650px]"
-                loop
-                autoPlay
-                muted
               />
             </div>
           </div>
@@ -184,8 +183,8 @@ export default function LandingPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 { icon: Phone, text: "(+598) 92 396 930", link: "tel:+59892396930" },
-                { icon: MapPin, text: "Torre More Atlántico, Punta del Este.", link: "https://maps.app.goo.gl/f3LTCc6VSpLwAVWq6" },
-                { icon: MessageCircle, text: "Contacto de Whatsapp", link: "https://wa.link/zzwej7" },
+                { icon: MapPin, text: "Torre Barcelona, Punta del Este.", link: "https://maps.app.goo.gl/N6cF1KoATANfZV3f7" },
+                { icon: MessageCircle, text: "Contacto de Whatsapp", link: "https://wa.me/59894123456" },
               ].map(({ icon: Icon, text, link }) => (
                 // add an optional link to this element
                 <a

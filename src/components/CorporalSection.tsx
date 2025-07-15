@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { Baskervville } from 'next/font/google';
 import { ChevronRight, Clock, DollarSign, RefreshCw } from 'lucide-react';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 // Importar las imágenes de elipses
@@ -224,8 +225,8 @@ const AlternativeFacialsSection: React.FC<AlternativeFacialsSectionProps> = ({ i
                         )}
                       </div>
 
-                      <Button className="w-full bg-black hover:bg-gray-800 text-white">
-                        Reservar Turno
+                      <Button className="w-full bg-black hover:bg-gray-800 text-white" asChild>
+                        <Link href="https://wa.me/59894123456" target="_blank" rel="noopener noreferrer">Reservar Turno</Link>
                       </Button>
                     </div>
                   </div>
