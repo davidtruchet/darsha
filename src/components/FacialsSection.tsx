@@ -214,7 +214,7 @@ const FacialsSection: React.FC<FacialsSectionProps> = ({ image }) => {
                       </div>
 
                       <Button className="w-full bg-black hover:bg-gray-800 text-white" asChild>
-                        <Link href="https://wa.me/59894123456" target="_blank" rel="noopener noreferrer">
+                        <Link href="https://wa.me/59892396930" target="_blank" rel="noopener noreferrer">
                           Reserva tu turno
                         </Link>
                       </Button>

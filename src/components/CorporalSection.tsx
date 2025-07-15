@@ -226,7 +226,7 @@ const AlternativeFacialsSection: React.FC<AlternativeFacialsSectionProps> = ({ i
                       </div>
 
                       <Button className="w-full bg-black hover:bg-gray-800 text-white" asChild>
-                        <Link href="https://wa.me/59894123456" target="_blank" rel="noopener noreferrer">Reservar Turno</Link>
+                        <Link href="https://wa.me/59892396930" target="_blank" rel="noopener noreferrer">Reservar Turno</Link>
                       </Button>
                     </div>
                   </div>

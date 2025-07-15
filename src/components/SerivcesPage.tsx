@@ -33,7 +33,7 @@ export default function ServicesPage() {
           <div className="container mx-auto px-4 text-center">
             <h3 className="text-xl font-semibold text-center mb-12 text-black">¿Listo para experimentar nuestros servicios?</h3>
             <Button size="lg" className="w-full md:w-auto bg-black hover:opacity-60 text-offwhite" asChild>
-              <Link href="https://wa.me/59894123456" target="_blank" rel="noopener noreferrer">
+              <Link href="https://wa.me/59892396930" target="_blank" rel="noopener noreferrer">
                 Reserva tu turno
               </Link>
             </Button>

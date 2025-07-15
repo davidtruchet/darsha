@@ -53,7 +53,7 @@ export default function LandingPage() {
               Invierte en ti, eres tu proyecto más importante.
               </p>
                 <Button size="lg" className="w-full md:w-auto bg-black hover:opacity-60 text-offwhite" asChild>
-                <Link href="https://wa.me/59894123456" target="_blank" rel="noopener noreferrer">
+                <Link href="https://wa.me/59892396930" target="_blank" rel="noopener noreferrer">
                   Reserva tu turno
                 </Link>
                 </Button>
@@ -184,7 +184,7 @@ export default function LandingPage() {
               {[
                 { icon: Phone, text: "(+598) 92 396 930", link: "tel:+59892396930" },
                 { icon: MapPin, text: "Torre Barcelona, Punta del Este.", link: "https://maps.app.goo.gl/N6cF1KoATANfZV3f7" },
-                { icon: MessageCircle, text: "Contacto de Whatsapp", link: "https://wa.me/59894123456" },
+                { icon: MessageCircle, text: "Contacto de Whatsapp", link: "https://wa.me/59892396930" },
               ].map(({ icon: Icon, text, link }) => (
                 // add an optional link to this element
                 <a
